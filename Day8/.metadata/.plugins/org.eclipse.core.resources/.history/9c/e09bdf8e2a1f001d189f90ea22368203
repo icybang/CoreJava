@@ -1,0 +1,61 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+ enum Option
+{
+	EXIT,ADD,SUB,MUL,DIV,MOD
+}
+public class Day8_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		String choice;
+		do {
+			System.out.println("0.EXIT\n1.Add\n2.SUB\n3.MUL\n4.DIV");
+			System.out.println("Enter the choice");
+			choice = sc.next();
+			Option o = null;
+			choice = choice.toUpperCase();
+			o = Option.valueOf(choice);
+			switch(o)
+			{
+			case EXIT :
+					break;
+			case ADD :
+				System.out.println("Enter two number");
+				int n1 = sc.nextInt();
+				int n2 = sc.nextInt();
+				System.out.println("Addition is :"+(n1+n2));
+				break;
+			case SUB :
+				System.out.println("Enter two number");
+				int n3 = sc.nextInt();
+				int n4 = sc.nextInt();
+				System.out.println("Subtraction is :"+(n3-n4));
+				break;
+			case MUL :
+				System.out.println("Enter two number");
+				int n5 = sc.nextInt();
+				int n6 = sc.nextInt();
+				System.out.println("Multiplication is :"+(n5*n6));
+				break;
+			case DIV :
+				System.out.println("Enter two number");
+				int n7 = sc.nextInt();
+				int n8 = sc.nextInt();
+				if( n8!= 0)
+					System.out.println("Division is :"+(n7/n8));
+				else
+					System.out.println("Can not divide by zero");
+				break;
+			}
+			System.out.println("Do you want to countinue? yes or no");
+			choice = sc.next();
+			choice = choice.toLowerCase();
+			
+		}while(choice == "yes");
+	}
+
+}

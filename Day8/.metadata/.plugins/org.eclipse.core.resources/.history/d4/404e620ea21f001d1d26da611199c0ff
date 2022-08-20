@@ -1,0 +1,91 @@
+package com.sunbeam;
+
+import java.util.Scanner;
+
+ enum Option
+{
+	EXIT,ADD,SUB,MUL,DIV
+}
+public class Day8_2 {
+	 static int menu()
+	{
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		System.out.println("0.EXIT\n1.Add\n2.SUB\n3.MUL\n4.DIV");
+		System.out.println("Enter the choice");
+		choice = sc.nextInt();
+		return choice;
+	}
+	 static void enumassign(Option o,int choice)
+	 {
+		 switch(choice)
+		 {
+		 case 0:
+			 o = o.valueOf("EXIT");
+		 case 1:
+			 o = o.valueOf("ADD");
+		 case 2:
+			 o = o.valueOf("SUB");
+		 case 3:
+			 o = o.valueOf("MUL");
+		 case 4 :
+			 o = o.valueOf("DIV");
+		 }
+	 }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+	
+		int a;
+		do {
+			int choice = menu();
+			
+			int n1 = sc.nextInt();
+			int n2 = sc.nextInt();
+			
+			Option o  = null;
+			enumassign(o,choice);
+			
+			//System.out.println(o);
+			
+			switch(o)
+			{
+			case EXIT :
+					break;
+			case ADD :
+				System.out.println("Enter two number");
+				System.out.println("Addition is :"+(n1+n2));
+				break;
+				
+			case SUB :
+				System.out.println("Enter two number");
+				System.out.println("Subtraction is :"+(n1-n2));
+				break;
+				
+			case MUL :
+				System.out.println("Enter two number");
+				System.out.println("Multiplication is :"+(n1*n2));
+				break;
+				
+			case DIV :
+				System.out.println("Enter two number");
+			
+				if( n2!= 0)
+					System.out.println("Division is :"+(n1/n2));
+				else
+					System.out.println("Can not divide by zero");
+				break;
+				
+			default:
+				break;
+			}
+			System.out.println("Do you want to countinue? yes(1) or no(0)");
+			 a = sc.nextInt();
+			
+			
+		}while(a!= 0);
+		sc.close();
+	}
+
+}
