@@ -1,0 +1,5 @@
+package com.p1.student;
+
+public class StudentFunctionality extend student{
+
+}
